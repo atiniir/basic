@@ -1,0 +1,52 @@
+---
+driver:
+  name: vagrant
+  gui: true
+
+provisioner:
+  name: chef_zero
+
+# config.winrm.username
+# config.winrm.password
+# config.winrm.host
+# config.winrm.port
+# config.winrm.guest_port
+
+#vm_hostname: frontend1.chef-server.com
+
+#  network:
+#    - ["forwarded_port", {guest: 80, host: 8080}]
+#    - ["private_network", {ip: "192.168.33.33"}]
+
+#  driver_config:
+#    key: value
+
+platforms:
+  - name: win7-32-ie11-winrm
+    transport: 
+      name: "winrm" 
+      port: 55985
+    driver: 
+      box: win7-32-ie11-winrm
+      communicator: winrm
+      port: 55985
+      username: "ieuser"
+      password: "Passw0rd!"
+#      driver_config:
+#        port: 55985
+#      log_level: debug
+#      winrm:
+#      #  user: "ieuser"
+#      #  password: "Passw0rd!"
+  - name: win7-x32-ie11
+    driver: 
+      box: win7-x32-ie11
+  - name: centos-6.5-opscode
+    driver:
+      box: centos-6.5-opscode
+
+suites:
+  - name: default
+    run_list:
+      - recipe[basic::default]
+    attributes:
