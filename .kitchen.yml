@@ -22,12 +22,12 @@ provisioner:
 #    key: value
 
 platforms:
-  - name: win7-32-ie11-winrm
+  - name: win7-x32-ie11-winrm
     transport: 
       name: "winrm" 
       port: 55985
     driver: 
-      box: win7-32-ie11-winrm
+      box: win7-x32-ie11-winrm
       communicator: winrm
       port: 55985
       username: "ieuser"
