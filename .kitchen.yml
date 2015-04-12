@@ -35,9 +35,6 @@ platforms:
 #      driver_config:
 #        port: 55985
 #      log_level: debug
-#      winrm:
-#      #  user: "ieuser"
-#      #  password: "Passw0rd!"
   - name: win7-x32-ie11
     driver: 
       box: win7-x32-ie11
